@@ -1,0 +1,21 @@
+REGISTRATION CLEANING SUMMARY
+=============================
+
+Total registrations: 21
+Valid registrations: 14
+Needs fix: 5
+Duplicates: 2
+
+VALID REGISTRATIONS BY BRANCH
+AIDS: 2
+CIVIL: 2
+CSE: 4
+EEE: 2
+IT: 3
+MECH: 1
+
+VALID REGISTRATIONS BY YEAR
+Year 1: 2
+Year 2: 5
+Year 3: 3
+Year 4: 4

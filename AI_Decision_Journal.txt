@@ -1,0 +1,66 @@
+AI DECISION JOURNAL
+===================
+
+Project:
+Event Registration Cleaner
+
+1. Why was AI used?
+-------------------
+AI was used to extract registration details from messy
+human-written text. Registration entries may contain different
+formats, extra words, or incomplete information. An LLM can
+identify the required fields from this unstructured text.
+
+2. Why was Groq used?
+---------------------
+Groq was selected because it provides API-based LLM access with
+fast response times and is suitable for testing an AI-powered
+Python application.
+
+3. Why was the LLM not trusted completely?
+-------------------------------------------
+The LLM can make extraction mistakes or misunderstand messy input.
+Therefore, Python is used after extraction to fact-check, clean,
+validate, and detect duplicates.
+
+4. What decisions are made by Python?
+--------------------------------------
+Python performs:
+
+- Phone number validation
+- Email validation
+- Year validation
+- Branch validation
+- Name cleaning
+- Duplicate detection
+- Final status classification
+
+5. What happens when information is uncertain?
+-----------------------------------------------
+If a required field is missing or cannot be safely validated,
+the record is marked as needs_fix instead of allowing the system
+to guess.
+
+6. How was prompt injection handled?
+------------------------------------
+The system prompt tells the LLM to treat the registration entry
+only as data and not follow instructions contained inside the
+entry. Red-team testing was also used to test this behavior.
+
+7. How were duplicates handled?
+-------------------------------
+Cleaned phone numbers and emails are compared with previously
+processed registrations. The first occurrence is kept and later
+matching records are marked as duplicates.
+
+8. Human involvement
+--------------------
+Records in problems.csv are reviewed by the event team. Humans
+make the final decision when information requires clarification
+or cannot be safely resolved automatically.
+
+9. Main design principle
+------------------------
+The system follows a human-in-the-loop approach. AI performs
+extraction, while deterministic Python rules perform validation
+and final decision-making.

@@ -1,0 +1,28 @@
+COST AND LATENCY NOTE
+=====================
+
+The project uses the Groq API with the openai/gpt-oss-20b model
+for extracting registration details from messy text.
+
+COST:
+The project uses an API-based LLM, so API usage may have a cost
+depending on the provider's current pricing and usage limits.
+The project minimizes unnecessary API calls by processing each
+registration entry once.
+
+LATENCY:
+LLM extraction is the main time-consuming step because each
+registration requires an API request. Python-based cleaning,
+validation, fact-checking, and duplicate detection are much faster.
+
+For a small event registration dataset, the latency is acceptable.
+For a very large dataset, batch processing or asynchronous API
+requests could improve performance.
+
+TRADE-OFF:
+Using an LLM makes extraction from messy human-written
+registration data easier, but it introduces API dependency,
+latency, and possible extraction errors.
+
+To reduce risk, the system uses Python validation and fact-checking
+after the LLM extraction instead of trusting the LLM output directly.

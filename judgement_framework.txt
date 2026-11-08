@@ -1,0 +1,73 @@
+JUDGMENT FRAMEWORK
+==================
+
+Purpose:
+To define how the Event Registration Cleaner decides whether a
+registration is valid, needs fixing, or is a duplicate.
+
+1. VALID
+--------
+A record is marked VALID when:
+
+- Name is present.
+- Phone number is valid.
+- Email is valid.
+- Year is between 1 and 4.
+- Branch is one of the allowed branches.
+- The record is not a duplicate.
+
+Action:
+The record is added to clean_list.csv.
+
+
+2. NEEDS_FIX
+------------
+A record is marked NEEDS_FIX when:
+
+- A required field is missing.
+- Phone number is invalid.
+- Email is invalid.
+- Year is invalid.
+- Branch is unknown or invalid.
+- Fact-checking finds a mismatch between the extracted data
+  and the original registration entry.
+
+Action:
+The record is added to problems.csv with the reason.
+
+
+3. DUPLICATE
+------------
+A record is marked DUPLICATE when:
+
+- Its cleaned phone number matches a previous valid/processed
+  registration, OR
+- Its cleaned email matches a previous registration.
+
+First occurrence is kept.
+Later occurrence is marked as duplicate.
+
+Action:
+The duplicate record is added to problems.csv with the reason.
+
+
+4. HUMAN CHECKPOINT
+-------------------
+The event team reviews all records in problems.csv.
+
+They contact the participant when information is missing,
+unclear, invalid, or duplicated.
+
+The human team makes the final decision when the automated
+system cannot determine the correct information.
+
+
+5. LLM ROLE
+-----------
+The LLM is used only for extracting information from messy
+registration text.
+
+The LLM must not guess, correct, or invent information.
+
+Python performs fact-checking, cleaning, validation,
+duplicate detection, and final classification.

@@ -1,0 +1,13 @@
+400-Word Reflection
+
+The Event Registration Cleaner project helped me understand how AI can be combined with normal programming to solve a practical problem. The main problem was that event registration details could be entered in messy formats, making it difficult to directly use the data. Instead of manually cleaning every registration, I developed a Python program that uses an LLM to extract important information and then uses Python rules to validate and clean it.
+
+One of the most important things I learned was that an AI model should not be trusted blindly. The LLM is useful for understanding unstructured text, but it can misunderstand information or make incorrect assumptions. Because of this, my program performs fact-checking and validation after the AI extraction. Phone numbers, emails, years, and branches are checked using Python. Duplicate registrations are also detected using cleaned phone numbers or email addresses.
+
+I also learned about prompt design. The system prompt clearly tells the LLM what information to extract and prevents it from guessing missing information. I tested the system using red-team cases, including messy data, prompt injection, and differently formatted duplicate phone numbers. This helped me understand that testing an AI system is important because unexpected inputs can produce unexpected results.
+
+Another important learning was the concept of human-in-the-loop AI. Instead of trying to automatically solve every problem, the system places uncertain or invalid records in "problems.csv". The event team can then manually review these records and contact participants if necessary. This makes the system safer and more reliable.
+
+During development, I also faced programming errors and debugging problems. For example, I had issues with the evaluation code, duplicate detection, function return values, and syntax errors. Fixing these problems helped me understand how different Python functions work together and how to use test results to locate errors.
+
+Overall, this project improved my understanding of Python, APIs, JSON, LLMs, validation, duplicate detection, testing, and debugging. More importantly, I learned that a good AI application is not simply about using an AI model. It needs clear rules, validation, testing, error handling, and human oversight. This project gave me practical experience in building a small AI-powered system that can solve a real-world data-cleaning problem.

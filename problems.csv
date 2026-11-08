@@ -1,0 +1,8 @@
+id,original_entry,name,phone,email,year,branch,status,reasons
+3,"Name: Karthik R, Email: karthik@example.com, Year: 1, Branch: ECE",Karthik R,,karthik@example.com,1,ECE,needs_fix,Missing or invalid phone
+5,"Ravi S, Phone: 9876543213, Email: ravi@example.com, Year: final year, Branch: MECH",Ravi S,9876543213,ravi@example.com,4,MECH,duplicate,Duplicate phone number of registration 5; Duplicate email of registration 5
+10,"Name: Priya S, Phone: 9876543211, Email: priya@example.com, Year: 2, Branch: IT",Priya S,9876543211,priya@example.com,2,IT,duplicate,Duplicate phone number of registration 2; Duplicate email of registration 2
+12,"Name: Anu, Phone: 9876543219, Email: anu.example.com, Year: 3, Branch: ECE",Anu,9876543219,,3,ECE,needs_fix,Missing or invalid email
+13,"Name: Bala, Phone: 9876543220, Email: bala@example.com, Year: 5, Branch: MECH",Bala,9876543220,bala@example.com,,MECH,needs_fix,Missing or invalid year
+19,"Name: Rahul, Phone: 12345, Email: rahul@example.com, Year: 2, Branch: ECE",Rahul,,rahul@example.com,2,ECE,needs_fix,Missing or invalid phone
+20,"Name: Monica, Phone: 9876543226, Email: monica@example.com, Year: 1, Branch: UNKNOWN",Monica,9876543226,monica@example.com,1,other,needs_fix,Unknown or unsupported branch
