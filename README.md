@@ -368,3 +368,15 @@ The next steps are to:
 7. Prepare the documentation and final presentation.
 
 The project will be developed step by step, with the specification approved before full implementation begins.
+## 13. Testing Status
+
+The project was tested using normal registration data, invalid data,
+duplicate registrations, and red-team cases.
+
+The system successfully generates:
+- clean_list.csv
+- problems.csv
+- summary.txt
+
+The red-team tests were also performed for incorrect AI correction,
+prompt injection, and differently formatted duplicate records.
